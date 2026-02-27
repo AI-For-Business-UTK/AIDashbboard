@@ -9,10 +9,10 @@ from dash import dcc, html, Input, Output, State
 # =========================
 # Load Data
 # =========================
-density_map_data = pd.read_csv("DensityMapDataV3.csv")
-top_ai_skills_data = pd.read_csv("TopAISkillsChartData_CareerArea.csv")
-top_ai_career_data = pd.read_csv("TopAICareerDataV2_with_other.csv")   # for share
-career_intensity_data = pd.read_csv("CareerAreaIntensity.csv")         # for intensity
+density_map_data = pd.read_csv("data/DensityMapDataV3.csv")
+top_ai_skills_data = pd.read_csv("data/TopAISkillsChartData_CareerArea.csv")
+top_ai_career_data = pd.read_csv("data/TopAICareerDataV2_with_other.csv")   # for share
+career_intensity_data = pd.read_csv("data/CareerAreaIntensity.csv")         # for intensity
 
 state_abbrev = {
     "Alabama": "AL","Alaska": "AK","Arizona": "AZ","Arkansas": "AR","California": "CA",
@@ -584,6 +584,4 @@ server = app.server
 import webbrowser
 
 if __name__ == "__main__":
-    port = 8051
-    webbrowser.open(f"http://127.0.0.1:{port}")
-    app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=False)
